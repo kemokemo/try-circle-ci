@@ -21,6 +21,7 @@ jobs:
       - run: go build
 
 workflows:
+  version: 2
   test and build:
     jobs:
       - test
