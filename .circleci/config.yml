@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/golang:1.13.5-node
+    working_directory: /go/src/github.com/kemokemo/try-circle-ci
+
+    steps:
+      - checkout
+      - run: go version
+      - run: go test -v -cover
+  build:
+    docker:
+      - image: circleci/golang:1.13.5-node
+    working_directory: /go/src/github.com/kemokemo/try-circle-ci
+
+    steps:
+      - checkout
+      - run: go build
