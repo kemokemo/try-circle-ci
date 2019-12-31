@@ -25,7 +25,8 @@ jobs:
     steps:
       - checkout
       - run: go get -v -t -d ./...
-      - run: go get github.com/golang/lint/golint
+      # see here: https://github.com/golang/lint/issues/415#issuecomment-511234597
+      - run: go get -u golang.org/x/lint/golint
       - run: golint ./...
       - run: go vet ./...
   build:
