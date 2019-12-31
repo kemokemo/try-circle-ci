@@ -6,7 +6,7 @@ A repository to play around with using [CircleCI](https://circleci.com/).
 
 ## Install
 
-You require the golang 1.13 or later. (because os the [testing.Init()](https://github.com/kemokemo/try-circle-ci/blob/492e2be35caa30474754c9f258e10615ccbe6185/main.go#L24))
+You require the golang 1.13 or later. (because of the [testing.Init()](https://github.com/kemokemo/try-circle-ci/blob/492e2be35caa30474754c9f258e10615ccbe6185/main.go#L24))
 
 ```sh
 go get kemokemo/try-circle-ci
