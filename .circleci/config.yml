@@ -25,6 +25,17 @@ jobs:
       - checkout
       - run: go get -v -t -d ./...
       - run: go build
+  deploy:
+    executor: go-113-5
+    steps:
+      - run: echo 'export PATH=${GOPATH}/bin/:${PATH}' >> $BASH_ENV
+      - checkout
+      - run: go get -v -t -d ./...
+      - run: go get github.com/mitchellh/gox
+      - run: go get github.com/tcnksm/ghr
+      - run: mkdir release
+      - run: gox -output "./release/{{.Dir}}_{{.OS}}_{{.Arch}}"  ./ ./...
+      - run: ghr -u $CIRCLE_PROJECT_USERNAME $CIRCLE_TAG release/
 
 workflows:
   version: 2
@@ -32,3 +43,17 @@ workflows:
     jobs:
       - test
       - build
+  deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
