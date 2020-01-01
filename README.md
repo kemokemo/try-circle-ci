@@ -1,6 +1,6 @@
 # try-circle-ci
 
-[![CircleCI](https://circleci.com/gh/kemokemo/try-circle-ci.svg?style=svg)](https://circleci.com/gh/kemokemo/try-circle-ci) [![codecov](https://codecov.io/gh/kemokemo/try-circle-ci/branch/master/graph/badge.svg)](https://codecov.io/gh/kemokemo/try-circle-ci) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![CircleCI](https://circleci.com/gh/kemokemo/try-circle-ci.svg?style=svg)](https://circleci.com/gh/kemokemo/try-circle-ci) [![codecov](https://codecov.io/gh/kemokemo/try-circle-ci/branch/master/graph/badge.svg)](https://codecov.io/gh/kemokemo/try-circle-ci) [![Go Report Card](https://goreportcard.com/badge/github.com/kemokemo/try-circle-ci)](https://goreportcard.com/report/github.com/kemokemo/try-circle-ci)
 
 A repository to play around with using [CircleCI](https://circleci.com/).
 
@@ -21,6 +21,11 @@ $ try-circle-ci kemokemo nekomimi
 Hello kemokemo!
 Hello nekomimi!
 ```
+
+## About CI/CD
+
+- CI: [CircleCI](https://circleci.com/gh/kemokemo/try-circle-ci)
+- Coverage: [Codecov](https://codecov.io/gh/kemokemo/try-circle-ci)
 
 ## License
 
