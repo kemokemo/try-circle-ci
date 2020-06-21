@@ -29,7 +29,7 @@ Hello nekomimi!
 
 ## License
 
-[MIT](https://github.com/kemokemo/try-circle-ci/blob/improve-docs/LICENSE)
+[MIT](https://github.com/kemokemo/try-circle-ci/blob/master/LICENSE)
 
 ## Authors
 
