@@ -44,7 +44,7 @@ jobs:
       - run: go get github.com/mitchellh/gox
       - run: go get github.com/tcnksm/ghr
       - run: mkdir release
-      - run: gox -output "./release/{{.Dir}}_{{.OS}}_{{.Arch}}"  ./ ./...
+      - run: gox -ldflags="-X 'main.revision=$(git rev-parse --short HEAD)'" -output "./release/{{.Dir}}_{{.OS}}_{{.Arch}}"  ./ ./...
       - run: ghr -u $CIRCLE_PROJECT_USERNAME $CIRCLE_TAG release/
 
 workflows:

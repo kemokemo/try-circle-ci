@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"flag"
+	"fmt"
 	"testing"
 )
 
@@ -90,5 +91,39 @@ func Test_main(t *testing.T) {
 				t.Errorf("stderr = %v, want %v", stderr, tt.outerr)
 			}
 		})
+	}
+}
+
+func Test_main_ver(t *testing.T) {
+	flagSetVer := flag.NewFlagSet("testing main flag v", flag.ContinueOnError)
+	flagSetVer.Set("v", "true")
+	flagSetVer.Parse([]string{""})
+
+	bout := new(bytes.Buffer)
+	out = bout
+	bouterr := new(bytes.Buffer)
+	outerr = bouterr
+
+	var exitCode int
+	exit = func(n int) {
+		exitCode = n
+	}
+
+	ver = true
+	main()
+
+	if exitCode != exitCodeOK {
+		t.Errorf("exit code = %v, want %v", exitCode, exitCodeOK)
+	}
+
+	stdout := bout.String()
+	verStr := fmt.Sprintf("%s version %s.%s", Name, Version, revision)
+	if stdout != verStr {
+		t.Errorf("stdout = %v, want %v", stdout, verStr)
+	}
+
+	stderr := bouterr.String()
+	if stderr != "" {
+		t.Errorf("stderr = %v, want %v", stderr, "")
 	}
 }
