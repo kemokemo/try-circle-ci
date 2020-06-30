@@ -4,6 +4,6 @@ package main
 const Name string = "try-circle-ci"
 
 // Version is semantic version of this app.
-const Version string = "0.0.1"
+const Version string = "0.0.2"
 
 var revision = ""
